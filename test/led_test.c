@@ -10,7 +10,6 @@
 int main (void)
 {
    DDRA=0x20;
-   C_SETBIT(FAULT_LED);
    while(1)
    {
       C_CLEARBIT(FAULT_LED);
