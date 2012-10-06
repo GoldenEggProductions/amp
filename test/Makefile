@@ -1,5 +1,6 @@
 # Golden Egg Productions
 # Author: Chris Ostrum
+# Modified: Alex Steinberg
 
 CC=avr-gcc
 MCU=atmega644a
@@ -55,6 +56,6 @@ clean:
 rdfuses:
 	avrdude -p $(PROGRAMMER_MCU) -c $(PROGRAMER_TYPE) -P $(PROGRAMMER_PORT) -v -q
 # use atmega8 internal RC oscillator 1 Mhz
-wrfuse1mhz:
-	avrdude -p  $(PROGRAMMER_MCU) -c $(PROGRAMER_TYPE) -P $(PROGRAMMER_PORT) -u -v -U lfuse:w:0xe1:m
+wrfuses:
+	avrdude -p  $(PROGRAMMER_MCU) -c $(PROGRAMER_TYPE) -P $(PROGRAMMER_PORT) -u -v -U lfuse:w:0b11011110:m
 #-------------------
