@@ -1,8 +1,17 @@
-amp
-===
+Adaptive Machine Platform (AMP)
+===============================
 
-Adaptive Machine Platform (amp)
+Intro
+-----
+AMP is an adaptive machine platform...
 
-run 'make' from the test directory to make the fault-led test program
-run 'make load' with the ISP connected to install and run the led_test program. 
-NOTE-the Makefile specified in the test directory can be modified for your ISP configuration.
+  
+Installation
+------------
+    git clone https://github.com/GoldenEggProductions/amp.git ~/src/amp
+
+LED Test Program
+------------
+led_test will flash the fault led (D16) at a 1Hz rate continuously.
+    cd ~/src/amp/test 
+    make load
