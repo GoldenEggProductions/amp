@@ -1,3 +1,4 @@
 *~
 *.swp
 tags
+.sconsign.dblite
