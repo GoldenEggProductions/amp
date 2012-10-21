@@ -1,3 +1,6 @@
+#ifndef _BIT_H
+#define _BIT_H
+
 #define SETBIT(ADDRESS,BIT) (ADDRESS |= (1<<BIT))
 #define CLEARBIT(ADDRESS,BIT) (ADDRESS &= ~(1<<BIT))
 #define FLIPBIT(ADDRESS,BIT) (ADDRESS ^= (1<<BIT))
@@ -15,6 +18,8 @@
 #define C_CLEARBIT(comb) CLEARBIT(VARFROMCOMB(comb), BITFROMCOMB(comb))
 #define C_FLIPBIT(comb) FLIPBIT(VARFROMCOMB(comb), BITFROMCOMB(comb))
 #define C_CHECKBIT(comb) CHECKBIT(VARFROMCOMB(comb), BITFROMCOMB(comb))
+
+#endif
 
 // Example Use
 //#define Status_LED  PORTA, 3

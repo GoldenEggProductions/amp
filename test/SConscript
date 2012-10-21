@@ -3,15 +3,15 @@
 #
 
 # Initialize environment
-Import('env')
+Import('env build_dir')
 
 ld_alias = ['ld_led', 'ld_serial', 'ld_pwm']
 tests    = ['test_led', 'test_serial', 'test_pwm']
 
 for alias, test in zip(ld_alias,tests):
-    elf_name = test+'.elf'
-    hex_name = test+'.hex'
-    env.Object(test)
-    env.Elf(elf_name, test+'.o')
-    env.Hex(hex_name, elf_name)
-    env.AlwaysBuild(env.Alias(alias, hex_name, env.Flash(hex_name)))
+   elf_name = test+'.elf'
+   hex_name = test+'.hex'
+   env.Object(test)
+   env.Elf(elf_name, test+'.o')
+   env.Hex(hex_name, elf_name)
+   env.AlwaysBuild(env.Alias(alias, hex_name, env.Flash(build_dir + hex_name)))

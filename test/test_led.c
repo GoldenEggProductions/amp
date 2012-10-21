@@ -4,8 +4,7 @@
 
 #include "bit.h"
 #include "timer.h"
-
-#define FAULT_LED PORTA, 5
+#include "defines.h"
 
 int main (void)
 {
