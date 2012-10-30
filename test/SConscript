@@ -5,8 +5,8 @@
 # Initialize environment
 Import('env build_dir')
 
-ld_alias = ['ld_led', 'ld_serial', 'ld_pwm']
-tests    = ['test_led', 'test_serial', 'test_pwm']
+ld_alias = ['ld_led', 'ld_serial', 'ld_dips', 'ld_pwm']
+tests    = ['test_led', 'test_serial', 'test_dips', 'test_pwm']
 
 for alias, test in zip(ld_alias,tests):
    elf_name = test+'.elf'
