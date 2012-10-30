@@ -12,7 +12,14 @@ Installation
 
 LED Test Program
 ------------
-led_test will flash the fault led (D16) at a 1Hz rate continuously.
+test_led will flash the fault led (D16) at a 1Hz rate continuously.
 
-    cd ~/src/amp/test 
-    make load
+    cd ~/src/amp 
+    scons ld_led
+
+Dip Switch Test Program
+------------
+test_dips will flash the fault led (D16) for a count equal to the value of the dip switches.
+
+    cd ~/src/amp 
+    scons ld_dips
