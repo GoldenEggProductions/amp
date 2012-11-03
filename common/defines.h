@@ -1,7 +1,12 @@
 #ifndef _DEFINES_H
 #define _DEFINES_H
 
+#define F_CPU 16000000L
+#define BAUD 57600
+
 #include <avr/io.h>
+#include "bit.h"
+#include "timer.h"
 
 #define TRUE  (1)
 #define FALSE (0)
@@ -26,6 +31,12 @@
 #define DIP_SW_2_MASK 0x4
 #define DIP_SW_3_MASK 0x8
 
+// MMC card chip select pin defines
+#define MMC_CS_PORT PORTC
+#define MMC_CS_DDR  DDRC
+#define MMC_CS_PIN  2
+
+
 void InitInterfaceBoard(void)
 {
    DDRA  = 0x20; // set FAULT_LED as output and dip switches as input
@@ -45,9 +56,7 @@ void FlashFaultLED(uint16_t interval)
 
 uint8_t GetDipSwitchSetting(void)
 {
-   uint8_t retval = 0;
-   retval = (PINA & 0x0F);
-   return retval;
+   return (PINA & 0x0F);
 }
 
 #endif
