@@ -1,5 +1,5 @@
 #include "defines.h"
-#include "usart.h"
+#include "uart.h"
 
 int main (void)
 {
@@ -13,18 +13,18 @@ int main (void)
    strcpy(tx, "Enter text to be retransmitted:\r\n");
    size = strlen(tx);
 
-   USART_Init(SER_USB_USART);
+   UART_Init(SER_USB_UART);
    for(;;)
    {
-      USART_TX_S(SER_USB_USART, tx, size);
+      UART_TX_S(SER_USB_UART, tx, size);
       delay_ms(1000);
-      bytesRead = USART_RX(SER_USB_USART, rx);
+      bytesRead = UART_RX(SER_USB_UART, rx);
       if( bytesRead > 0 ) break;
    }
 
    while(1)
    {
-      bytesRead = USART_RX(SER_USB_USART, rx);
+      bytesRead = UART_RX(SER_USB_UART, rx);
       if( bytesRead > 0 )
       {
          if( bytesRead > 127 ) bytesRead = 125;
@@ -32,7 +32,7 @@ int main (void)
          tx[bytesRead] = '\r';
          tx[bytesRead+1] = '\n';
          size = bytesRead + 2;
-         USART_TX_S(SER_USB_USART, tx, size);
+         UART_TX_S(SER_USB_UART, tx, size);
       }
       delay_ms(1000);
    }

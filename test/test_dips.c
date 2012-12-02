@@ -1,9 +1,9 @@
-#include "defines.h"
+#include "helper.h"
 
 int main (void)
 {
    uint8_t ui8_dip_switches;
-   int i;
+   int8_t i;
 
    InitInterfaceBoard();
 
